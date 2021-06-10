@@ -17,4 +17,3 @@ def triangle(request):
     else:
         form = TriangleForm()
     return render(request, "triangle/triangle.html", context={"form": form})
-
