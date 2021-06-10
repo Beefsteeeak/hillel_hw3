@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@3(%r652(0b0^h755471ak!&t4gabqq1=m3_tiay*!8)25(e7!'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", 'django-insecure-@3(%r652(0b0^h755471ak!&t4gabqq1=m3_tiay*!8)25(e7!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'polls.apps.PollsConfig',
+    'triangle.apps.TriangleConfig'
 ]
 
 MIDDLEWARE = [
