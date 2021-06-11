@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'polls.apps.PollsConfig',
-    'triangle.apps.TriangleConfig'
+    'triangle.apps.TriangleConfig',
+    'person.apps.PersonConfig'
 ]
 
 MIDDLEWARE = [
