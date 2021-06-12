@@ -1,7 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .models import Person, PersonModelForm
+from .forms import PersonModelForm
+from .models import Person
 
 
 def person(request):

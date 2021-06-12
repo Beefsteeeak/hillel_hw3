@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import ModelForm
 
 
 class Person(models.Model):
@@ -9,9 +8,3 @@ class Person(models.Model):
 
     def __str__(self):
         return self.first_name
-
-
-class PersonModelForm(ModelForm):
-    class Meta:
-        model = Person
-        fields = ['first_name', 'last_name', 'email']
