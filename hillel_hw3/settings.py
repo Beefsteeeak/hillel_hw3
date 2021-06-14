@@ -41,10 +41,11 @@ INSTALLED_APPS = [
 
     'django_extensions',
 
-    'relations.apps.RelationsConfig',
-    'polls.apps.PollsConfig',
-    'triangle.apps.TriangleConfig',
+    'mlm.apps.MlmConfig',
     'person.apps.PersonConfig',
+    'polls.apps.PollsConfig',
+    'relations.apps.RelationsConfig',
+    'triangle.apps.TriangleConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'mlm.middleware.LogMiddleware',
 ]
 
 ROOT_URLCONF = 'hillel_hw3.urls'
