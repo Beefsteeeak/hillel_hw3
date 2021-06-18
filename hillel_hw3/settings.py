@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
 
+    'bookstore.apps.BookstoreConfig',
     'mlm.apps.MlmConfig',
     'person.apps.PersonConfig',
     'polls.apps.PollsConfig',
