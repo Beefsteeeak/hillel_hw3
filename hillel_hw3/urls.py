@@ -31,5 +31,11 @@ if settings.DEBUG:
     import debug_toolbar
     urlpatterns += [
         path('__debug__/', include(debug_toolbar.urls)),
-        path('silk/', include('silk.urls', namespace='silk')),
+        # path('silk/', include('silk.urls', namespace='silk')),
     ]
+
+# tests doesn't work without it
+if 'silk' in settings.INSTALLED_APPS:
+    urlpatterns = [
+        path('silk/', include('silk.urls', namespace='silk')),
+    ] + urlpatterns
