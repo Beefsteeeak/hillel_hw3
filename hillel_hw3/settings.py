@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 if DEBUG:
     INSTALLED_APPS += [
         'debug_toolbar',
+        'silk',
     ]
 
 MIDDLEWARE = [
@@ -75,6 +76,7 @@ MIDDLEWARE = [
 if DEBUG:
     MIDDLEWARE += [
         'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'silk.middleware.SilkyMiddleware',
     ]
 
 ROOT_URLCONF = 'hillel_hw3.urls'
