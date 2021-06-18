@@ -154,6 +154,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Silk
 SILKY_AUTHENTICATION = True
+
 SILKY_AUTHORISATION = True
+
 SILKY_PERMISSIONS = lambda user: user.is_superuser  # noqa:E731
