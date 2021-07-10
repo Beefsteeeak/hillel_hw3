@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bookstore.apps.BookstoreConfig',
     'mlm.apps.MlmConfig',
     'person.apps.PersonConfig',
+    'personbase.apps.PersonbaseConfig',
     'polls.apps.PollsConfig',
     'relations.apps.RelationsConfig',
     'triangle.apps.TriangleConfig',
