@@ -4,6 +4,8 @@
 
 {% block content %}
 
+    <p><strong><a href="{% url 'personbase:list' %}">To list of persons</a></strong></p>
+
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

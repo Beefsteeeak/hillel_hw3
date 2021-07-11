@@ -4,6 +4,8 @@
 
 {% block content %}
 
+    <p><strong><a href="{% url 'personbase:detail' pk=object.pk %}">To person detail</a></strong></p>
+
     <form method="post">
         {% csrf_token %}
         <p>Are you sure you want to delete "{{ object }}"?</p>
