@@ -24,14 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", 'django-insecure-@3(%r652(0b0^h755471ak!&t4gabqq1=m3_tiay*!8)25(e7!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
     "localhost",
-    '127.0.0.1',
-]
-
-INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
@@ -50,16 +46,11 @@ INSTALLED_APPS = [
     'bookstore.apps.BookstoreConfig',
     'mlm.apps.MlmConfig',
     'person.apps.PersonConfig',
+    'personbase.apps.PersonbaseConfig',
     'polls.apps.PollsConfig',
     'relations.apps.RelationsConfig',
     'triangle.apps.TriangleConfig',
 ]
-
-if DEBUG:
-    INSTALLED_APPS += [
-        'debug_toolbar',
-        'silk',
-    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,12 +63,6 @@ MIDDLEWARE = [
 
     'mlm.middleware.LogMiddleware',
 ]
-
-if DEBUG:
-    MIDDLEWARE += [
-        'debug_toolbar.middleware.DebugToolbarMiddleware',
-        'silk.middleware.SilkyMiddleware',
-    ]
 
 ROOT_URLCONF = 'hillel_hw3.urls'
 
@@ -153,10 +138,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Silk
-SILKY_AUTHENTICATION = True
-
-SILKY_AUTHORISATION = True
-
-SILKY_PERMISSIONS = lambda user: user.is_superuser  # noqa:E731

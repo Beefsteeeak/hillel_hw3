@@ -1,0 +1,24 @@
+{% extends 'personbase/base.html' %}
+
+{% block title %}Person detail{% endblock %}
+
+{% block content %}
+
+    <p><strong><a href="{% url 'personbase:list' %}">To list of persons</a></strong></p>
+
+    <p>First name: {{ object.first_name }}</p>
+    <p>Last name: {{ object.last_name }}</p>
+    <p>Email: {{ object.email }}</p>
+
+    <div class="person actions">
+        <form action="{% url 'personbase:update' pk=object.pk %}" style="display: inline-block">
+            {% csrf_token %}
+            <input type="submit" value="Update">
+        </form>
+        <form action="{% url 'personbase:delete' pk=object.pk %}" style="display: inline-block">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'personbase/base.html' %}
+
+{% block title %}Create person{% endblock %}
+
+{% block content %}
+
+    <p><strong><a href="{% url 'personbase:list' %}">To list of persons</a></strong></p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+
+{% endblock %}
